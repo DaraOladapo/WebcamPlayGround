@@ -23,7 +23,7 @@ namespace WebcamPlayGround.WPF
             //{
             //    cmbVideoSource.Items.Add(videoDevice.Name);
             //}
-            var videoSource = videoDevicesList.Count > 1 ? new VideoCaptureDevice(videoDevicesList[1].MonikerString) : new VideoCaptureDevice(videoDevicesList[0].MonikerString);
+            VideoCaptureDevice videoSource = videoDevicesList.Count > 1 ? new VideoCaptureDevice(videoDevicesList[1].MonikerString) : new VideoCaptureDevice(videoDevicesList[0].MonikerString);
             videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
             videoSource.Start();
         }
@@ -64,7 +64,7 @@ namespace WebcamPlayGround.WPF
 
         private void OnSavePicture(object sender, RoutedEventArgs e)
         {
-            var ImageBitmapToSave = (BitmapSource)SnappedImage.Source;
+            BitmapSource ImageBitmapToSave = (BitmapSource)SnappedImage.Source;
             JpegBitmapEncoder encoder = new JpegBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(ImageBitmapToSave));
             encoder.QualityLevel = 100;
