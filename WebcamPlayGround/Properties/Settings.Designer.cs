@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebcamPlayGround.Properties
+namespace WebcamPlayGround.WPF.Properties
 {
 
 

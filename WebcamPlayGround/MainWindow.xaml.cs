@@ -8,7 +8,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace WebcamPlayGround
+namespace WebcamPlayGround.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
