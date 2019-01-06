@@ -18,7 +18,7 @@ namespace WebcamPlayGround.WPF
         public MainWindow()
         {
             InitializeComponent();
-            var videoDevicesList = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            FilterInfoCollection videoDevicesList = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             //foreach (FilterInfo videoDevice in videoDevicesList)
             //{
             //    cmbVideoSource.Items.Add(videoDevice.Name);
