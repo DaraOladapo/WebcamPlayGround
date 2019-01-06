@@ -61,5 +61,21 @@ namespace WebcamPlayGround.WPF
         {
             SnappedImage.Source = CamImage.Source;
         }
+
+        private void OnSavePicture(object sender, RoutedEventArgs e)
+        {
+            var ImageBitmapToSave = (BitmapSource)SnappedImage.Source;
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(ImageBitmapToSave));
+            encoder.QualityLevel = 100;
+            using (FileStream fileStream = new FileStream($"{DateTime.Now}.jpg"
+                .Replace("/", "-")
+                .Replace(":", "-")
+                .Replace(" ", "-"), FileMode.Create))
+            {
+                encoder.Save(fileStream);
+            }
+
+        }
     }
 }

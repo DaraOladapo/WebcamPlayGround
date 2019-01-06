@@ -16,7 +16,14 @@
                 <Image Height="320" Width="320" x:Name="CamImage" Grid.Column="0"/>
                 <Image Height="320" Width="320" x:Name="SnappedImage" Grid.Column="1"/>
             </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
                 <Button Content="Take Picture" Click="OnTakePicture"/>
+                <Button Content="Save Picture" Click="OnSavePicture" Grid.Column="1"/>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
